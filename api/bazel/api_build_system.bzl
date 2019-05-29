@@ -122,7 +122,6 @@ def api_proto_library(
         cc_deps = [_LibrarySuffix(d, _CC_SUFFIX) for d in deps] + external_cc_proto_deps + [
             "@com_github_gogo_protobuf//:gogo_proto_cc",
             "@com_google_googleapis//google/api:annotations_cc_proto",
-            #"@googleapis//:http_api_protos",  # Apparently http_cc_proto isn't used.
             "@com_google_googleapis//google/rpc:status_cc_proto",
         ],
         deps = [":" + name],
