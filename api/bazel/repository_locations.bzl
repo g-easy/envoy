@@ -32,7 +32,7 @@ REPOSITORY_LOCATIONS = dict(
         # TODO(dio): Consider writing a Skylark macro for importing Google API proto.
         sha256 = GOOGLEAPIS_SHA,
         strip_prefix = "googleapis-" + GOOGLEAPIS_GIT_SHA,
-        urls = ["https://github.com/g-easy/googleapis/archive/" + GOOGLEAPIS_GIT_SHA + ".tar.gz"], # FIXME: g-easy -> googleapis
+        urls = ["https://github.com/g-easy/googleapis/archive/" + GOOGLEAPIS_GIT_SHA + ".tar.gz"],  # FIXME: g-easy -> googleapis
     ),
     com_github_gogo_protobuf = dict(
         sha256 = GOGOPROTO_SHA256,
