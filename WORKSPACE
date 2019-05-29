@@ -1,10 +1,5 @@
 workspace(name = "envoy")
 
-local_repository(
-    name = "com_google_googleapis",
-    path = "../googleapis",
-)
-
 load("//bazel:api_repositories.bzl", "envoy_api_dependencies")
 
 envoy_api_dependencies()
