@@ -31,10 +31,8 @@ def api_py_proto_library(name, srcs = [], deps = [], has_services = 0):
         protoc = "@com_google_protobuf//:protoc",
         deps = [_LibrarySuffix(d, _PY_SUFFIX) for d in deps] + [
             "@com_lyft_protoc_gen_validate//validate:validate_py",
-            # FIXME
-            #"@googleapis//:api_httpbody_protos_py",
-            #"@googleapis//:http_api_protos_py",
-            #"@googleapis//:rpc_status_protos_py",
+            "@com_google_googleapis//google/api:annotations_py_proto",
+            "@com_google_googleapis//google/rpc:status_py_proto",
             "@com_github_gogo_protobuf//:gogo_proto_py",
         ],
         visibility = ["//visibility:public"],

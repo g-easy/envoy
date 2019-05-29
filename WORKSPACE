@@ -18,8 +18,9 @@ load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_languag
 switched_rules_by_language(
     name = "com_google_googleapis_imports",
     cc = True,
-    #go = True,
-    grpc = True
+    go = True,
+    grpc = True,
+    python = True
 )
 
 load("@rules_foreign_cc//:workspace_definitions.bzl", "rules_foreign_cc_dependencies")
