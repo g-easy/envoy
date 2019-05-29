@@ -32,6 +32,7 @@ def api_py_proto_library(name, srcs = [], deps = [], has_services = 0):
         deps = [_LibrarySuffix(d, _PY_SUFFIX) for d in deps] + [
             "@com_lyft_protoc_gen_validate//validate:validate_py",
             "@com_google_googleapis//google/api:annotations_py_proto",
+            "@com_google_googleapis//google/api:httpbody_py_proto",
             "@com_google_googleapis//google/rpc:status_py_proto",
             "@com_github_gogo_protobuf//:gogo_proto_py",
         ],

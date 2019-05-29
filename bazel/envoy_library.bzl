@@ -6,7 +6,6 @@ load(
     "envoy_external_dep_path",
     "envoy_linkstatic",
 )
-load("@com_google_protobuf//:protobuf.bzl", "cc_proto_library", "py_proto_library")
 load("@envoy_api//bazel:api_build_system.bzl", "api_proto_library")
 
 # As above, but wrapped in list form for adding to dep lists. This smell seems needed as
