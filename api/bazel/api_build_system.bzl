@@ -31,9 +31,10 @@ def api_py_proto_library(name, srcs = [], deps = [], has_services = 0):
         protoc = "@com_google_protobuf//:protoc",
         deps = [_LibrarySuffix(d, _PY_SUFFIX) for d in deps] + [
             "@com_lyft_protoc_gen_validate//validate:validate_py",
-            "@googleapis//:api_httpbody_protos_py",
-            "@googleapis//:http_api_protos_py",
-            "@googleapis//:rpc_status_protos_py",
+            # FIXME
+            #"@googleapis//:api_httpbody_protos_py",
+            #"@googleapis//:http_api_protos_py",
+            #"@googleapis//:rpc_status_protos_py",
             "@com_github_gogo_protobuf//:gogo_proto_py",
         ],
         visibility = ["//visibility:public"],
@@ -53,7 +54,8 @@ def api_go_proto_library(name, proto, deps = []):
             "@io_bazel_rules_go//proto/wkt:timestamp_go_proto",
             "@io_bazel_rules_go//proto/wkt:wrappers_go_proto",
             "@com_lyft_protoc_gen_validate//validate:go_default_library",
-            "@googleapis//:rpc_status_go_proto",
+            # FIXME
+            #"@googleapis//:rpc_status_go_proto",
         ],
     )
 
@@ -70,7 +72,8 @@ def api_go_grpc_library(name, proto, deps = []):
             "@io_bazel_rules_go//proto/wkt:struct_go_proto",
             "@io_bazel_rules_go//proto/wkt:wrappers_go_proto",
             "@com_lyft_protoc_gen_validate//validate:go_default_library",
-            "@googleapis//:http_api_go_proto",
+            # FIXME
+            #"@googleapis//:http_api_go_proto",
         ],
     )
 
@@ -109,8 +112,9 @@ def api_proto_library(
             "@com_google_protobuf//:struct_proto",
             "@com_google_protobuf//:timestamp_proto",
             "@com_google_protobuf//:wrappers_proto",
-            "@googleapis//:http_api_protos_proto",
-            "@googleapis//:rpc_status_protos_lib",
+            "@com_google_googleapis//google/api:annotations_proto",
+            "@com_google_googleapis//google/api:http_proto",
+            "@com_google_googleapis//google/rpc:status_proto",
             "@com_github_gogo_protobuf//:gogo_proto",
             "@com_lyft_protoc_gen_validate//validate:validate_proto",
         ],
@@ -121,8 +125,9 @@ def api_proto_library(
         linkstatic = linkstatic,
         cc_deps = [_LibrarySuffix(d, _CC_SUFFIX) for d in deps] + external_cc_proto_deps + [
             "@com_github_gogo_protobuf//:gogo_proto_cc",
-            "@googleapis//:http_api_protos",
-            "@googleapis//:rpc_status_protos",
+            "@com_google_googleapis//google/api:annotations_cc_proto",
+            #"@googleapis//:http_api_protos",  # Apparently http_cc_proto isn't used.
+            "@com_google_googleapis//google/rpc:status_cc_proto",
         ],
         deps = [":" + name],
         visibility = ["//visibility:public"],
