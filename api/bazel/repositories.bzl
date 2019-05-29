@@ -11,6 +11,7 @@ def api_dependencies():
         "com_lyft_protoc_gen_validate",
         locations = REPOSITORY_LOCATIONS,
     )
+
     # FIXME
     #envoy_http_archive(
     #    name = "com_google_googleapis",
