@@ -11,9 +11,16 @@ def api_dependencies():
         "com_lyft_protoc_gen_validate",
         locations = REPOSITORY_LOCATIONS,
     )
-    envoy_http_archive(
+    # FIXME
+    #envoy_http_archive(
+    #    name = "com_google_googleapis",
+    #    locations = REPOSITORY_LOCATIONS,
+    #)
+    # Temporarily use this repo which has cc and python rules:
+    http_archive(
         name = "com_google_googleapis",
-        locations = REPOSITORY_LOCATIONS,
+        strip_prefix = "googleapis-master",
+        urls = ["https://github.com/g-easy/googleapis/archive/master.zip"],
     )
     envoy_http_archive(
         name = "com_github_gogo_protobuf",
