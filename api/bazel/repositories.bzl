@@ -11,10 +11,11 @@ def api_dependencies():
         "com_lyft_protoc_gen_validate",
         locations = REPOSITORY_LOCATIONS,
     )
-    envoy_http_archive(
-        name = "com_google_googleapis",
-        locations = REPOSITORY_LOCATIONS,
-    )
+    # FIXME: revert this
+    #envoy_http_archive(
+    #    name = "com_google_googleapis",
+    #    locations = REPOSITORY_LOCATIONS,
+    #)
     envoy_http_archive(
         name = "com_github_gogo_protobuf",
         locations = REPOSITORY_LOCATIONS,

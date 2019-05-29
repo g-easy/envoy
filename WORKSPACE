@@ -1,5 +1,10 @@
 workspace(name = "envoy")
 
+local_repository(
+    name = "com_google_googleapis",
+    path = "../googleapis",
+)
+
 load("//bazel:api_repositories.bzl", "envoy_api_dependencies")
 
 envoy_api_dependencies()
@@ -13,6 +18,7 @@ load("@com_google_googleapis//:repository_rules.bzl", "switched_rules_by_languag
 switched_rules_by_language(
     name = "com_google_googleapis_imports",
     cc = True,
+    #go = True,
     grpc = True
 )
 
