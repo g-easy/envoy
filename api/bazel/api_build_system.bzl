@@ -52,8 +52,7 @@ def api_go_proto_library(name, proto, deps = []):
             "@io_bazel_rules_go//proto/wkt:timestamp_go_proto",
             "@io_bazel_rules_go//proto/wkt:wrappers_go_proto",
             "@com_lyft_protoc_gen_validate//validate:go_default_library",
-            # FIXME
-            #"@googleapis//:rpc_status_go_proto",
+            "@com_google_googleapis//google/rpc:status_go_proto",
         ],
     )
 
@@ -70,8 +69,7 @@ def api_go_grpc_library(name, proto, deps = []):
             "@io_bazel_rules_go//proto/wkt:struct_go_proto",
             "@io_bazel_rules_go//proto/wkt:wrappers_go_proto",
             "@com_lyft_protoc_gen_validate//validate:go_default_library",
-            # FIXME
-            #"@googleapis//:http_api_go_proto",
+            "@com_google_googleapis//google/api:annotations_go_proto",
         ],
     )
 
