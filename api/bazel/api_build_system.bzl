@@ -1,5 +1,5 @@
 load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
-load("@com_lyft_protoc_gen_validate//bazel:pgv_proto_library.bzl", "pgv_cc_proto_library")
+load("@com_envoyproxy_protoc_gen_validate//bazel:pgv_proto_library.bzl", "pgv_cc_proto_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_grpc_library", "go_proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_test")
 
@@ -113,7 +113,7 @@ def api_proto_library(
             "@com_google_googleapis//google/api:http_proto",
             "@com_google_googleapis//google/rpc:status_proto",
             "@com_github_gogo_protobuf//:gogo_proto",
-            "@com_lyft_protoc_gen_validate//validate:validate_proto",
+            "@com_envoyproxy_protoc_gen_validate//validate:validate_proto",
         ],
         visibility = visibility,
     )
